@@ -41,13 +41,14 @@ main {
 }
 
 .grid div {
-  border: 1px solid lightgrey;
+  /* border: 1px solid lightgrey; */
   flex-grow: 1;
   height: 10%;
   width: 10%;
   padding: 10px;
   text-align: center;
   cursor: pointer;
+  color: #fff;
 }
 
 .hide {
