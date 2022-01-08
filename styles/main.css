@@ -17,11 +17,20 @@ main {
   height: 90vh;
 }
 
+.startBtn {
+  padding: 10px 10px;
+  background-color: green;
+  color: #fff;
+  margin-top: 30px;
+}
+
 .landing-page-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px #000 solid;
+  padding: 30px;
 }
 
 .grid-wrapper {
@@ -45,7 +54,7 @@ main {
   flex-grow: 1;
   height: 10%;
   width: 10%;
-  padding: 10px;
+  padding: 70px;
   text-align: center;
   cursor: pointer;
   color: #fff;
@@ -58,8 +67,12 @@ main {
 .character {
   width: 5%;
   height: 5%;
-  background-color: green;
+  background-image: url(/assets/images/running-man-businessman-fast-running-keyframe-animation-2d-cartoon-flat-sprite-game-profile-side-view-character-free-vector.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
   position: relative;
   left: 0px;
   top: 0px;
+  
 }

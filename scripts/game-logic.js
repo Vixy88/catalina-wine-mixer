@@ -11,7 +11,7 @@ const cells = [];
 
 // CREATE GRID
 function createGrid() {
-  for (let i = 0; i < 99; i++) {
+  for (let i = 0; i < 20; i++) {
     const gridDiv = document.createElement('div');
     gridDiv.innerText = [i];
     grid.append(gridDiv);
@@ -37,7 +37,7 @@ const handleKeydown = (event) => {
     playerOne.style.left = playerX + 'px';
     playerX -= 20;
   }
-  if (event.code === 'ArrowDown' && playerY <= 410) {
+  if (event.code === 'ArrowDown' && playerY <= 500) {
     // move player down but stop if reach the border
     playerOne.style.top = playerY + 'px';
     playerY += 20;
