@@ -22,8 +22,9 @@ The game is a simple game where the player has to complete the mini challenges t
 - Interface for the character to move around
 - Interface that shows characters health, score and timer
 - Mini challenges that has to be completed to increase the time and complete the game
-- Win Screen
-- Loose Screen
+- Win Screen that displays the score and time of the player
+- Loose Screen that shows Brennan and Dale getting punished by the dad
+- Persistent Leaderboard using << localStorage >>
 
 
 ## Additional Features:
