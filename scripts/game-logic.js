@@ -11,7 +11,7 @@ const cells = [];
 
 // CREATE GRID
 function createGrid() {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 99; i++) {
     const gridDiv = document.createElement('div');
     gridDiv.innerText = [i];
     grid.append(gridDiv);
