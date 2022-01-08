@@ -1,6 +1,10 @@
 console.log('TEST: JavaScript file is working');
 
+//  VARIABLES
+
+
 //GRID
+const gridWrapper = document.querySelector('.grid-wrapper');
 const grid = document.querySelector('.grid');
 
 // GRID VARIABLES
@@ -10,7 +14,7 @@ const cells = [];
 
 // CREATE GRID
 function createGrid() {
-  for (let i = 0; i < 400; i++) {
+  for (let i = 0; i < 100; i++) {
     const gridDiv = document.createElement('div');
     gridDiv.innerText = [i];
     grid.append(gridDiv);
@@ -21,64 +25,48 @@ createGrid();
 
 
 // CHARACTER ELEMENTS
-class Character {
-  constructor(height, width, x, xVelocity, y, yVelocity, jumping) {
-    this.height = height;
-    this.width = width;
-    this.x = x;
-    this.xVelocity = xVelocity;
-    this.y = y;
-    this.yVelocity = yVelocity;
-    this.jumping = jumping;
-  }
-}
-
-const characterBrennan = new Character(32, 32, 0, 0, 0, 0, true);
-const characterDale = new Character(32, 32, 0, 0, 0, 0, true);
 
 
 // PLAYER CONTROLLER
+const playerOne = document.querySelector('.character');
+let playerX = 0;
+let playerY = 0;
 
-const controller = {
-  left: false,
-  right: false,
-  up: false,
-  down: false,
-
-  keyListener: function (event) {
-    let keyState = (event.type === 'keydown') ? true : false;
-
-    switch (event.keyCode) {
-      case 1: // left arrow
-        controller.left = keyState;
-        break;
-      case 2: // right arrow
-        controller.right = keyState;
-        break;
-      case 3: // right arrow
-        controller.up = keyState;
-        break;
-      case 4: // right arrow
-        controller.down = keyState;
-        break;
-    }
+const handleKeydown = (event) => {
+  // LEFT AND RIGHT
+  if (event.code === 'ArrowRight' && playerX <= 860) {
+    // move player right
+    playerOne.style.left = playerX + 'px';
+    playerX += 15;
+  }
+  if (event.code === 'ArrowLeft' && playerX >= 5) {
+    // move player left
+    playerOne.style.left = playerX + 'px';
+    playerX -= 20;
+  }
+  if (event.code === 'ArrowDown' && playerY <= 850) {
+    playerOne.style.top = playerY + 'px';
+    playerY += 20;
+  }
+  if (event.code === 'ArrowUp' && playerY >= 0) {
+    playerOne.style.top = playerY + 'px';
+    playerY -= 20;
   }
 };
 
-const gameLoop = function () {
-  if (controller.up && characterBrennan.jumping === false) { // JUMP
-    characterBrennan.yVelocity -= 20;
-    characterBrennan.jumping = true;
-  }
-  if (controller.left) {
-    characterBrennan.xVelocity -= 0.5;
-  }
-  if (controller.right) {
-    characterBrennan.xVelocity += 0.5;
-  }
-  characterBrennan.yVelocity += 1.5; // gravity
-  characterBrennan.x += characterBrennan.xVelocity;
-  characterBrennan.y += characterBrennan.yVelocity;
-  characterBrennan.xVelocity *= 0.9; // friction
-  characterBrennan.yVelocity *= 0.9; // friction
+document.addEventListener('keydown', handleKeydown);
+
+// START GAME LOGIC
+
+const startButton = document.querySelector('.startBtn'); // GRAB BUTTON and store in variable
+
+const startGame = () => {
+  gridWrapper.classList.remove('hide'); // removes the class that hides the game screen on DOM load
 };
+
+startButton.addEventListener('click', startGame);
+
+
+
+
+
