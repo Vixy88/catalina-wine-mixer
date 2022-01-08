@@ -30,7 +30,7 @@ main {
   justify-content: center;
   align-items: center;
   border: 2px #000 solid;
-  padding: 30px;
+  padding: 100px 30px;
 }
 
 .grid-wrapper {
