@@ -9,6 +9,21 @@ html, body {
   width: 90vw;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.landing-page-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid-wrapper {
   width: 1000px;
   height: 600px;
@@ -32,11 +47,12 @@ html, body {
   width: 10%;
   padding: 10px;
   text-align: center;
+  cursor: pointer;
 }
 
-/* .hide {
+.hide {
   display: none;
-} */
+}
 
 .character {
   width: 5%;

@@ -8,20 +8,29 @@
   <title>The Catalina Wine Mixer</title>
 </head>
 <body>
-  <!-- LANDING PAGE -->
-  <section class="landing-page-section">
-    <h1>THE CATALINA WINE MIXER GAME</h1>
-    <button class="startBtn">Start Game</button>
-  </section>
-  <!-- GAME SCREEN -->
-  <section class="display-game-section">
-    <div class="grid-wrapper hide">
-      <div class="grid">
-        <div class="character"></div>
+  <main>
+    <!-- LANDING PAGE -->
+    <section class="landing-page-section">
+      <h1>THE CATALINA WINE MIXER GAME</h1>
+      <button class="startBtn">Start Game</button>
+    </section>
+    <!-- GAME SCREEN -->
+    <section class="display-game-section hide">
+      <div>
+        <div>
+          <h2>Player Score: <span>0</span></h2>
+        </div>
+        <div>
+          <h2>Time Left: <span id="countDownTimer">60</span></h2>
+        </div>
       </div>
-    </div>
-  </section>
-  
+      <div class="grid-wrapper">
+        <div class="grid">
+          <div class="character"></div>
+        </div>
+      </div>
+    </section>
+  </main>
   <script src="/scripts/game-logic.js"></script>
 </body>
 </html>
