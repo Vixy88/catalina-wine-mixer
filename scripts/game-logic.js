@@ -4,14 +4,9 @@ console.log('TEST: JavaScript file is working');
 const gridWrapper = document.querySelector('.grid-wrapper');
 const grid = document.querySelector('.grid');
 
-// GRID VARIABLES
-const width = 15;
-const cellCount = width * width;
-const cells = [];
-
 // CREATE GRID
 function createGrid() {
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 22; i++) {
     const gridDiv = document.createElement('div');
     gridDiv.innerText = [i];
     grid.append(gridDiv);
