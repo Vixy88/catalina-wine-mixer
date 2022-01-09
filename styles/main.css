@@ -76,3 +76,13 @@ main {
   top: 0px;
   
 }
+
+.bushObject {
+  width: 1%;
+  height: 1%;
+  position: relative;
+  border-radius: 50%;
+  top: 200px;
+  left: 200px;
+  background-color: green;
+}
