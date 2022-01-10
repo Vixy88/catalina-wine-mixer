@@ -83,7 +83,7 @@ main {
   height: 1%;
   position: relative;
   border-radius: 50%;
-  top: 200px;
-  left: 200px;
+  right: 200px;
+  bottom: 200px;
   background-color: green;
 }

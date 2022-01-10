@@ -7,10 +7,13 @@ const grid = document.querySelector('.grid');
 // CREATE GRID
 function createGrid() {
   for (let i = 0; i < 22; i++) {
-    const gridDiv = document.createElement('div');
+    var gridDiv = document.createElement('div');
     gridDiv.innerText = [i];
     grid.append(gridDiv);
   }
+  const gridBush = document.createElement('div');
+  gridBush.classList.add('bushObject');
+  gridDiv.append(gridBush);
 }
 
 createGrid();
