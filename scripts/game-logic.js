@@ -1,7 +1,6 @@
 console.log('TEST: JavaScript file is working');
 
 //GRID
-const gridWrapper = document.querySelector('.grid-wrapper');
 const grid = document.querySelector('.grid');
 
 // CREATE GRID
@@ -11,6 +10,7 @@ function createGrid() {
     gridDiv.innerText = [i];
     grid.append(gridDiv);
   }
+  // create a Bush Object (Currently just a circle until replaced by 2d image of bush)
   const gridBush = document.createElement('div');
   gridBush.classList.add('bushObject');
   gridDiv.append(gridBush);
