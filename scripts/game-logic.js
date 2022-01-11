@@ -2,24 +2,27 @@ console.log('TEST: JavaScript file is working');
 
 //GRID
 const grid = document.querySelector('.grid');
+const numberOfCells = 22;
 
 // CREATE GRID
 function createGrid() {
-  for (let i = 0; i < 22; i++) {
+  for (let i = 0; i < numberOfCells; i++) {
     var gridDiv = document.createElement('div');
     gridDiv.classList.add('cell');
     grid.append(gridDiv);
+    // CREATE CHAMPAGNE BOTTLES IN A RANDOM AREA
+    var champagneBottle = document.createElement('div');
+    champagneBottle.classList.add('champagneBottle');
+    grid.append(champagneBottle);
+    champagneBottle.style.top = Math.floor((Math.random() * 100) + 1) + 'px';
+    champagneBottle.style.left = Math.floor((Math.random() * 100) + 1) + 'px';
+
   }
   // create a Bush Object (Currently just a circle until replaced by 2d image of bush)
   const gridBush = document.createElement('div');
   gridBush.classList.add('bushObject');
   gridDiv.append(gridBush);
-  for (let j = 0; j < 8; j++) {
-    const champagneBottle = document.createElement('div');
-    champagneBottle.classList.add('champagneBottle');
-    gridDiv.append(champagneBottle);
-    console.log('Champagne is served!');
-  }
+
 }
 
 createGrid();
