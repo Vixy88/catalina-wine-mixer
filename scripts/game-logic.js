@@ -10,25 +10,20 @@ function createGrid() {
     var gridDiv = document.createElement('div');
     gridDiv.classList.add('cell');
     grid.append(gridDiv);
-    // CREATE CHAMPAGNE BOTTLES IN A RANDOM AREA
-    var champagneBottle = document.createElement('div');
+    // CREATE CHAMPAGNE BOTTLES IN A RANDOM LOCATIONS
+    const champagneBottle = document.createElement('div');
     champagneBottle.classList.add('champagneBottle');
     grid.append(champagneBottle);
     champagneBottle.style.top = Math.floor((Math.random() * 100) + 1) + 'px';
     champagneBottle.style.left = Math.floor((Math.random() * 100) + 1) + 'px';
-
   }
-  // create a Bush Object (Currently just a circle until replaced by 2d image of bush)
-  const gridBush = document.createElement('div');
-  gridBush.classList.add('bushObject');
-  gridDiv.append(gridBush);
-
 }
 
 createGrid();
 
 // PLAYER CONTROLLER
 const playerOne = document.querySelector('.characterDale');
+let playerScore = 0;
 let playerX = 0;
 let playerY = 0;
 
