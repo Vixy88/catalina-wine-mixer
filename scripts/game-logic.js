@@ -7,19 +7,25 @@ const grid = document.querySelector('.grid');
 function createGrid() {
   for (let i = 0; i < 22; i++) {
     var gridDiv = document.createElement('div');
-    gridDiv.innerText = [i];
+    gridDiv.classList.add('cell');
     grid.append(gridDiv);
   }
   // create a Bush Object (Currently just a circle until replaced by 2d image of bush)
   const gridBush = document.createElement('div');
   gridBush.classList.add('bushObject');
   gridDiv.append(gridBush);
+  for (let j = 0; j < 8; j++) {
+    const champagneBottle = document.createElement('div');
+    champagneBottle.classList.add('champagneBottle');
+    gridDiv.append(champagneBottle);
+    console.log('Champagne is served!');
+  }
 }
 
 createGrid();
 
 // PLAYER CONTROLLER
-const playerOne = document.querySelector('.character');
+const playerOne = document.querySelector('.characterDale');
 let playerX = 0;
 let playerY = 0;
 

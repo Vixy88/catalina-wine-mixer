@@ -64,10 +64,10 @@ main {
   display: none;
 }
 
-.character {
+.characterDale {
   width: 5%;
   height: 5%;
-  background-image: url(/assets/images/running-man-businessman-fast-running-keyframe-animation-2d-cartoon-flat-sprite-game-profile-side-view-character-free-vector.jpeg);
+  background-image: url(/assets/images/Dale.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto;
@@ -86,4 +86,17 @@ main {
   right: 200px;
   bottom: 200px;
   background-color: green;
+}
+
+.champagneBottle {
+  width: 5%;
+  height: 5%;
+  background-image: url(/assets/images/champagne-bottle.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 9999;
 }
