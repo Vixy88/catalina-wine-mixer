@@ -56,7 +56,7 @@ document.addEventListener('keydown', handleKeydown);
 // COUNTDOWN TIMER LOGIC
 
 const countDownClock = document.querySelector('#countDownTimer');
-let startTime = 5;
+let startTime = 60;
 
 function countDownTimer() {
   setInterval(function () {
