@@ -37,12 +37,10 @@ function init() {
 
   // PLAYER CONTROLLER
   let playerScore = 0;
-  let playerX = 0;
   let playerY = 0;
 
   const handleKeydown = (event) => {
     const playerDiv = document.querySelector('.cell.characterDale');
-    const siblings = document.querySelector('cell');
 
     // LEFT AND RIGHT
     if (event.code === 'ArrowRight') {
@@ -52,6 +50,7 @@ function init() {
       if (playerDiv.classList.contains('champagneBottle')) {
         playerDiv.classList.remove('champagneBottle');
         playerScore += 1;
+        playerScore = document.getElementById('playerScore');
       }
     }
     if (event.code === 'ArrowLeft') {
