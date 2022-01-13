@@ -6,15 +6,16 @@ function init() {
   const restartButton = document.getElementById('restartBtn')
   const gameScreenDisplay = document.querySelector('.display-game-section');
   const landingPageScreen = document.querySelector('.landing-page-section');
+  const cells = document.getElementsByClassName('cell');
 
   //GRID
   const grid = document.querySelector('.grid');
-  const numberOfCells = 20;
+  const numberOfCells = 24;
 
   // CREATE GRID
   function createGrid() {
     for (let i = 0; i < numberOfCells; i++) {
-      var cell = document.createElement('div');
+      const cell = document.createElement('div');
       cell.classList.add('cell');
       if (Math.random() > 0.5) {
         cell.classList.add('champagneBottle');
@@ -35,31 +36,37 @@ function init() {
   // Function that gives the player a point everytime he moves into a cell with a champagnebottle and removes the champagnebottle class from the cell
 
   // PLAYER CONTROLLER
-  const playerOne = document.querySelector('.characterDale');
   let playerScore = 0;
   let playerX = 0;
   let playerY = 0;
 
   const handleKeydown = (event) => {
+    const playerDiv = document.querySelector('.cell.characterDale');
+    const siblings = document.querySelector('cell');
+
     // LEFT AND RIGHT
-    if (event.code === 'ArrowRight' && playerX <= 1000) {
+    if (event.code === 'ArrowRight') {
       // move player right but stop if reach the border
-      playerOne.style.left = playerX + 'px';
-      playerX += 20;
+      playerDiv.nextElementSibling.classList.add('characterDale');
+      playerDiv.classList.remove('characterDale');
+      if (playerDiv.classList.contains('champagneBottle')) {
+        playerDiv.classList.remove('champagneBottle');
+        playerScore += 1;
+      }
     }
-    if (event.code === 'ArrowLeft' && playerX >= 5) {
+    if (event.code === 'ArrowLeft') {
       // move player left but stop if reach the border
-      playerOne.style.left = playerX + 'px';
-      playerX -= 20;
+      playerDiv.previousElementSibling.classList.add('characterDale');
+      playerDiv.classList.remove('characterDale');
     }
-    if (event.code === 'ArrowDown' && playerY <= 1000) {
+    if (event.code === 'ArrowDown') {
       // move player down but stop if reach the border
-      playerOne.style.top = playerY + 'px';
+      playerDiv.style.top = playerY + 'px';
       playerY += 20;
     }
     if (event.code === 'ArrowUp' && playerY >= 0) {
       // move player up but stop if reach the border
-      playerOne.style.top = playerY + 'px';
+      playerDiv.style.top = playerY + 'px';
       playerY -= 20;
     }
   };
