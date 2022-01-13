@@ -64,30 +64,6 @@ main {
   display: none;
 }
 
-.characterDale {
-  width: 5%;
-  height: 5%;
-  background-image: url(/assets/images/Dale.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto;
-  position: relative;
-  left: 0px;
-  top: 0px;
-  z-index: 9999;
-  
-}
-
-.bushObject {
-  width: 1%;
-  height: 1%;
-  position: relative;
-  border-radius: 50%;
-  right: 200px;
-  bottom: 200px;
-  background-color: green;
-}
-
 .champagneBottle {
   width: 5%;
   height: 5%;
@@ -98,5 +74,16 @@ main {
   position: relative;
   left: 0px;
   top: 0px;
-  z-index: 9999;
+}
+
+.characterDale {
+  width: 5%;
+  height: 5%;
+  background-image: url(/assets/images/Dale.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: relative;
+  left: 0px;
+  top: 0px;
 }

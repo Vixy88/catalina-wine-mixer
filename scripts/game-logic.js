@@ -2,25 +2,33 @@ console.log('TEST: JavaScript file is working');
 
 //GRID
 const grid = document.querySelector('.grid');
-const numberOfCells = 22;
+const numberOfCells = 30;
 
 // CREATE GRID
 function createGrid() {
   for (let i = 0; i < numberOfCells; i++) {
-    var gridDiv = document.createElement('div');
-    gridDiv.classList.add('cell');
-    grid.append(gridDiv);
-    // CREATE CHAMPAGNE BOTTLES IN A RANDOM LOCATIONS
-    const champagneBottle = document.createElement('div');
-    champagneBottle.classList.add('champagneBottle');
-    grid.append(champagneBottle);
-    champagneBottle.style.top = Math.floor((Math.random() * 100) + 1) + 'px';
-    champagneBottle.style.left = Math.floor((Math.random() * 100) + 1) + 'px';
+    var cell = document.createElement('div');
+    cell.classList.add('cell');
+    if (Math.random() > 0.5) {
+      cell.classList.add('champagneBottle');
+    }
+    grid.append(cell);
   }
+  addCharacter();
 }
 
 createGrid();
 
+// Function that adds the class containing the image of the Dale Character to the first cell on the grid
+function addCharacter() {
+  let characterStartingPosition = document.querySelector('.cell');
+  characterStartingPosition.classList.add('characterDale');
+}
+
+// Function that gives the player a point everytime he moves into a cell with a champagnebottle and removes the champagnebottle class from the cell
+// function collectChampagneBottles() {
+//   if (cell.cl)
+// }
 // PLAYER CONTROLLER
 const playerOne = document.querySelector('.characterDale');
 let playerScore = 0;
@@ -39,7 +47,7 @@ const handleKeydown = (event) => {
     playerOne.style.left = playerX + 'px';
     playerX -= 20;
   }
-  if (event.code === 'ArrowDown' && playerY <= 500) {
+  if (event.code === 'ArrowDown' && playerY <= 1000) {
     // move player down but stop if reach the border
     playerOne.style.top = playerY + 'px';
     playerY += 20;
