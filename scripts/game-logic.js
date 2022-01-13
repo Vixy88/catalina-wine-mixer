@@ -58,6 +58,10 @@ function init() {
       // move player left but stop if reach the border
       playerDiv.previousElementSibling.classList.add('characterDale');
       playerDiv.classList.remove('characterDale');
+      if (playerDiv.classList.contains('champagneBottle')) {
+        playerDiv.classList.remove('champagneBottle');
+        playerScore += 1;
+      }
     }
     if (event.code === 'ArrowDown') {
       // move player down but stop if reach the border
