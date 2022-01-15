@@ -7,7 +7,7 @@ const gameScreenDisplay = document.querySelector('.display-game-section');
 const landingPageScreen = document.querySelector('.landing-page-section');
 const grid = document.querySelector('.grid');
 const gridWrapper = document.querySelector('.grid-wrapper');
-const numberOfCells = 24;
+const numberOfCells = 28;
 
 // CREATE GRID
 function createGrid() {
@@ -37,7 +37,6 @@ var miniGameSection = document.querySelector('.mini-game-section');
 
 const handleKeydown = (event) => {
   const playerDiv = document.querySelector('.cell.characterDale');
-  // LEFT AND RIGHT
   if (event.code === 'ArrowRight') {
     // move player right but stop if reach the border
     playerDiv.nextElementSibling.classList.add('characterDale');
@@ -144,6 +143,10 @@ submitButton.addEventListener('click', function () {
   let questionOneInput = Number(document.getElementById('questionOneAnswer').value);
   if (questionOneInput === 2) {
     document.getElementById('correctOne').classList.remove('hide');
+    playerScore += 10;
+    playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
+    miniGameSection.classList.add('hide');
+    gridWrapper.classList.remove('hide');
   } else {
     document.getElementById('incorrectOne').classList.remove('hide');
   }
