@@ -129,6 +129,8 @@ restartButton.addEventListener('click', restartGame);
 
 const numOne = Number(document.getElementById('numOne').textContent);
 const numTwo = Number(document.getElementById('numTwo').textContent);
+let userInput = '';
+let submitButton = document.getElementById('submitBtn');
 
 function miniGameOne() {
 
@@ -136,6 +138,13 @@ function miniGameOne() {
     miniGameSection.classList.remove('hide');
     gridWrapper.classList.add('hide');
   }
-
-
 }
+
+submitButton.addEventListener('click', function () {
+  let questionOneInput = Number(document.getElementById('questionOneAnswer').value);
+  if (questionOneInput === 2) {
+    document.getElementById('correctOne').classList.remove('hide');
+  } else {
+    document.getElementById('incorrectOne').classList.remove('hide');
+  }
+});
