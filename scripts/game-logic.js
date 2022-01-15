@@ -101,7 +101,7 @@ const handleKeydown = (event) => {
       startTime++;
     }
   }
-  if (playerScore === 10) {
+  if (playerScore === 5) {
     miniGameOne();
   }
 };
@@ -149,11 +149,8 @@ let submitButton = document.getElementById('submitBtn');
 const miniGameSection = document.querySelector('.mini-game-section');
 
 function miniGameOne() {
-
-  if (playerScore === 5) {
-    miniGameSection.classList.remove('hide');
-    gridWrapper.classList.add('hide');
-  }
+  miniGameSection.classList.remove('hide');
+  gridWrapper.classList.add('hide');
 }
 
 submitButton.addEventListener('click', function () {
