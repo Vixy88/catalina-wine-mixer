@@ -40,6 +40,7 @@ const handleKeydown = (event) => {
     // move player right but stop if reach the border
     playerDiv.nextElementSibling.classList.add('characterDale');
     playerDiv.classList.remove('characterDale');
+    playerDiv.scrollIntoView();
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
@@ -51,6 +52,7 @@ const handleKeydown = (event) => {
     // move player left but stop if reach the border
     playerDiv.previousElementSibling.classList.add('characterDale');
     playerDiv.classList.remove('characterDale');
+    playerDiv.scrollIntoView();
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
@@ -62,6 +64,7 @@ const handleKeydown = (event) => {
     // move player down but stop if reach the border
     playerDiv.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.add('characterDale');
     playerDiv.classList.remove('characterDale');
+    playerDiv.scrollIntoView();
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
@@ -73,6 +76,7 @@ const handleKeydown = (event) => {
     // move player up but stop if reach the border
     playerDiv.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.classList.add('characterDale');
     playerDiv.classList.remove('characterDale');
+    playerDiv.scrollIntoView();
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
