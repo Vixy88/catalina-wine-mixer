@@ -48,7 +48,7 @@ const handleKeydown = (event) => {
       playerDiv.classList.remove('champagneBottle');
       playerScore++;
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
-      console.log('SCORE');
+      startTime++;
     }
   }
   if (event.code === 'ArrowLeft') {
@@ -57,19 +57,32 @@ const handleKeydown = (event) => {
     playerDiv.classList.remove('characterDale');
     if (playerDiv.classList.contains('champagneBottle')) {
       playerDiv.classList.remove('champagneBottle');
-      playerScoreContainer.textContent = playerScore;
       playerScore++;
+      playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
+      startTime++;
     }
   }
   if (event.code === 'ArrowDown') {
     // move player down but stop if reach the border
-    playerDiv.style.top = playerY + 'px';
-    playerY += 20;
+    playerDiv.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.add('characterDale');
+    playerDiv.classList.remove('characterDale');
+    if (playerDiv.classList.contains('champagneBottle')) {
+      playerDiv.classList.remove('champagneBottle');
+      playerScore++;
+      playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
+      startTime++;
+    }
   }
   if (event.code === 'ArrowUp' && playerY >= 0) {
     // move player up but stop if reach the border
-    playerDiv.style.top = playerY + 'px';
-    playerY -= 20;
+    playerDiv.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.classList.add('characterDale');
+    playerDiv.classList.remove('characterDale');
+    if (playerDiv.classList.contains('champagneBottle')) {
+      playerDiv.classList.remove('champagneBottle');
+      playerScore++;
+      playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
+      startTime++;
+    }
   }
 };
 
