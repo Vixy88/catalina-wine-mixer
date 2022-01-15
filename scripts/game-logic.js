@@ -1,8 +1,9 @@
 console.log('TEST: JavaScript file is working');
 
 // const variables
-const startButton = document.querySelector('.startBtn'); // GRAB BUTTON and store in variable
-const restartButton = document.getElementById('restartBtn')
+const startButtonDale = document.querySelector('.startBtnDale'); // GRAB BUTTON and store in variable
+const startButtonBrennan = document.querySelector('.startBtnBrennan'); // GRAB BUTTON and store in variable
+const restartButton = document.getElementById('restartBtn');
 const gameScreenDisplay = document.querySelector('.display-game-section');
 const landingPageScreen = document.querySelector('.landing-page-section');
 const grid = document.querySelector('.grid');
@@ -128,7 +129,7 @@ function countDownTimer() {
 
 // START GAME LOGIC
 
-const startGame = () => {
+const startGameDale = () => {
   gameScreenDisplay.classList.remove('hide'); // removes the class that hides the game screen on DOM load
   landingPageScreen.classList.add('hide'); // adds the class that hides the landing page screen
   countDownTimer();
@@ -141,7 +142,7 @@ function restartGame() {
 }
 
 // Eventlisteners
-startButton.addEventListener('click', startGame);
+startButtonDale.addEventListener('click', startGameDale);
 restartButton.addEventListener('click', restartGame);
 
 // MINIGAME LOGIC
