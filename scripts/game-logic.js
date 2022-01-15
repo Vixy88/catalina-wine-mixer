@@ -33,7 +33,6 @@ function addCharacter() {
 // PLAYER CONTROLLER
 let playerY = 0;
 let playerScore = 0;
-var miniGameSection = document.querySelector('.mini-game-section');
 
 const handleKeydown = (event) => {
   const playerDiv = document.querySelector('.cell.characterDale');
@@ -125,11 +124,8 @@ startButton.addEventListener('click', startGame);
 restartButton.addEventListener('click', restartGame);
 
 // MINIGAME LOGIC
-
-const numOne = Number(document.getElementById('numOne').textContent);
-const numTwo = Number(document.getElementById('numTwo').textContent);
-let userInput = '';
 let submitButton = document.getElementById('submitBtn');
+const miniGameSection = document.querySelector('.mini-game-section');
 
 function miniGameOne() {
 
