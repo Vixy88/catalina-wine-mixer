@@ -125,7 +125,10 @@ function restartGame() {
 startButton.addEventListener('click', startGame);
 restartButton.addEventListener('click', restartGame);
 
-// MINIGAMES
+// MINIGAME LOGIC
+
+const numOne = Number(document.getElementById('numOne').textContent);
+const numTwo = Number(document.getElementById('numTwo').textContent);
 
 function miniGameOne() {
 
