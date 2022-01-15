@@ -45,8 +45,8 @@ const handleKeydown = (event) => {
     playerDiv.nextElementSibling.classList.add('characterDale');
     playerDiv.classList.remove('characterDale');
     if (playerDiv.classList.contains('champagneBottle')) {
-      playerDiv.classList.remove('champagneBottle');
       playerScore++;
+      playerDiv.classList.remove('champagneBottle');
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
@@ -56,8 +56,8 @@ const handleKeydown = (event) => {
     playerDiv.previousElementSibling.classList.add('characterDale');
     playerDiv.classList.remove('characterDale');
     if (playerDiv.classList.contains('champagneBottle')) {
-      playerDiv.classList.remove('champagneBottle');
       playerScore++;
+      playerDiv.classList.remove('champagneBottle');
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
@@ -67,8 +67,8 @@ const handleKeydown = (event) => {
     playerDiv.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.add('characterDale');
     playerDiv.classList.remove('characterDale');
     if (playerDiv.classList.contains('champagneBottle')) {
-      playerDiv.classList.remove('champagneBottle');
       playerScore++;
+      playerDiv.classList.remove('champagneBottle');
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
@@ -78,8 +78,8 @@ const handleKeydown = (event) => {
     playerDiv.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.classList.add('characterDale');
     playerDiv.classList.remove('characterDale');
     if (playerDiv.classList.contains('champagneBottle')) {
-      playerDiv.classList.remove('champagneBottle');
       playerScore++;
+      playerDiv.classList.remove('champagneBottle');
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
@@ -97,7 +97,7 @@ function countDownTimer() {
   setInterval(function () {
     if (startTime === 0) {
       clearInterval(setInterval);
-      countDownClock.textContent = 'OH NO!!! You ruined the Catalina F***** Winemixer';
+      countDownClock.textContent = 'You Lost!';
     } else {
       countDownClock.textContent = startTime;
       startTime -= 1;
