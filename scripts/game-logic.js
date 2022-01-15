@@ -7,17 +7,20 @@ const gameScreenDisplay = document.querySelector('.display-game-section');
 const landingPageScreen = document.querySelector('.landing-page-section');
 const grid = document.querySelector('.grid');
 const gridWrapper = document.querySelector('.grid-wrapper');
-const numberOfCells = 28;
+const numberOfCells = 209;
+const cells = [];
+const rowLength = 19;
 
 // CREATE GRID
 function createGrid() {
   for (let i = 0; i < numberOfCells; i++) {
     const cell = document.createElement('div');
     cell.classList.add('cell');
-    if (Math.random() > 0.5) {
+    if (Math.random() > 0.9) {
       cell.classList.add('champagneBottle');
     }
     grid.append(cell);
+    cells.push(cell);
   }
   addCharacter();
 }
@@ -33,14 +36,19 @@ function addCharacter() {
 // PLAYER CONTROLLER
 let playerY = 0;
 let playerScore = 0;
+let playerCurrentPosition = 0;
 
 const handleKeydown = (event) => {
   const playerDiv = document.querySelector('.cell.characterDale');
-  if (event.code === 'ArrowRight') {
-    // move player right but stop if reach the border
-    playerDiv.nextElementSibling.classList.add('characterDale');
-    playerDiv.classList.remove('characterDale');
+
+
+  if (event.code === 'ArrowRight' && playerCurrentPosition < 208) {
+    cells[playerCurrentPosition].classList.remove('characterDale');
+    playerCurrentPosition += 1;
+    cells[playerCurrentPosition].classList.add('characterDale');
     playerDiv.scrollIntoView();
+    console.log(`Player Index position: ${playerCurrentPosition}`);
+    // CHAMPAGNE COLLECTION LOGIC
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
@@ -48,11 +56,14 @@ const handleKeydown = (event) => {
       startTime++;
     }
   }
-  if (event.code === 'ArrowLeft') {
+  if (event.code === 'ArrowLeft' && playerCurrentPosition > 0) {
     // move player left but stop if reach the border
-    playerDiv.previousElementSibling.classList.add('characterDale');
-    playerDiv.classList.remove('characterDale');
+    cells[playerCurrentPosition].classList.remove('characterDale');
+    playerCurrentPosition -= 1;
+    cells[playerCurrentPosition].classList.add('characterDale');
     playerDiv.scrollIntoView();
+    console.log(`Player Index position: ${playerCurrentPosition}`);
+    // CHAMPAGNE COLLECTION LOGIC
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
@@ -60,11 +71,14 @@ const handleKeydown = (event) => {
       startTime++;
     }
   }
-  if (event.code === 'ArrowDown') {
+  if (event.code === 'ArrowDown' && playerCurrentPosition < 190) {
     // move player down but stop if reach the border
-    playerDiv.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.add('characterDale');
-    playerDiv.classList.remove('characterDale');
+    cells[playerCurrentPosition].classList.remove('characterDale');
+    playerCurrentPosition += rowLength;
+    cells[playerCurrentPosition].classList.add('characterDale');
     playerDiv.scrollIntoView();
+    console.log(`Player Index position: ${playerCurrentPosition}`);
+    // CHAMPAGNE COLLECTION LOGIC
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
@@ -72,11 +86,14 @@ const handleKeydown = (event) => {
       startTime++;
     }
   }
-  if (event.code === 'ArrowUp' && playerY >= 0) {
+  if (event.code === 'ArrowUp' && playerCurrentPosition > 18) {
     // move player up but stop if reach the border
-    playerDiv.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.classList.add('characterDale');
-    playerDiv.classList.remove('characterDale');
+    cells[playerCurrentPosition].classList.remove('characterDale');
+    playerCurrentPosition -= rowLength;
+    cells[playerCurrentPosition].classList.add('characterDale');
     playerDiv.scrollIntoView();
+    console.log(`Player Index position: ${playerCurrentPosition}`);
+    // CHAMPAGNE COLLECTION LOGIC
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
@@ -84,7 +101,7 @@ const handleKeydown = (event) => {
       startTime++;
     }
   }
-  if (playerScore === 5) {
+  if (playerScore === 10) {
     miniGameOne();
   }
 };

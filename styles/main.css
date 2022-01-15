@@ -96,10 +96,11 @@ main {
 
 .grid div {
   flex-grow: 1;
-  padding: 70px;
+  padding: 25px;
   text-align: center;
   cursor: pointer;
   color: #fff;
+  background-size: contain;
 }
 
 .hide {
@@ -110,22 +111,15 @@ main {
   background-image: url(/assets/images/champagne-bottle.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
   position: relative;
-  left: 0px;
-  top: 0px;
 }
 
 .characterDale {
   background-image: url(/assets/images/Dale.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
   position: relative;
-  left: 0px;
-  top: 0px;
 }
-
 
 /* MINI GAMES STYLING */
 
