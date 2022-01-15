@@ -5,10 +5,8 @@ const startButton = document.querySelector('.startBtn'); // GRAB BUTTON and stor
 const restartButton = document.getElementById('restartBtn')
 const gameScreenDisplay = document.querySelector('.display-game-section');
 const landingPageScreen = document.querySelector('.landing-page-section');
-const cells = document.getElementsByClassName('cell');
-
-//GRID
 const grid = document.querySelector('.grid');
+const gridWrapper = document.querySelector('.grid-wrapper');
 const numberOfCells = 24;
 
 // CREATE GRID
@@ -35,10 +33,10 @@ function addCharacter() {
 // PLAYER CONTROLLER
 let playerY = 0;
 let playerScore = 0;
+var miniGameSection = document.querySelector('.mini-game-section');
 
 const handleKeydown = (event) => {
   const playerDiv = document.querySelector('.cell.characterDale');
-
   // LEFT AND RIGHT
   if (event.code === 'ArrowRight') {
     // move player right but stop if reach the border
@@ -64,7 +62,7 @@ const handleKeydown = (event) => {
   }
   if (event.code === 'ArrowDown') {
     // move player down but stop if reach the border
-    playerDiv.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.add('characterDale');
+    playerDiv.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.add('characterDale');
     playerDiv.classList.remove('characterDale');
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
@@ -75,7 +73,7 @@ const handleKeydown = (event) => {
   }
   if (event.code === 'ArrowUp' && playerY >= 0) {
     // move player up but stop if reach the border
-    playerDiv.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.classList.add('characterDale');
+    playerDiv.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.classList.add('characterDale');
     playerDiv.classList.remove('characterDale');
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
@@ -83,6 +81,9 @@ const handleKeydown = (event) => {
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
+  }
+  if (playerScore === 5) {
+    miniGameOne();
   }
 };
 
@@ -123,3 +124,15 @@ function restartGame() {
 // Eventlisteners
 startButton.addEventListener('click', startGame);
 restartButton.addEventListener('click', restartGame);
+
+// MINIGAMES
+
+function miniGameOne() {
+
+  if (playerScore === 5) {
+    miniGameSection.classList.remove('hide');
+    gridWrapper.classList.add('hide');
+  }
+
+
+}
