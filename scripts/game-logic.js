@@ -133,7 +133,14 @@ const startGameDale = () => {
   gameScreenDisplay.classList.remove('hide'); // removes the class that hides the game screen on DOM load
   landingPageScreen.classList.add('hide'); // adds the class that hides the landing page screen
   countDownTimer();
-  console.log('TEST: The Game successfully started');
+  console.log('TEST: The Game successfully started, playing with Dale');
+};
+
+const startGameBrennan = () => {
+  gameScreenDisplay.classList.remove('hide'); // removes the class that hides the game screen on DOM load
+  landingPageScreen.classList.add('hide'); // adds the class that hides the landing page screen
+  countDownTimer();
+  console.log('TEST: The Game successfully started, playing with Brennan');
 };
 
 // restarts the game if the player wants to - this will restart the whole game when clicked
@@ -143,6 +150,7 @@ function restartGame() {
 
 // Eventlisteners
 startButtonDale.addEventListener('click', startGameDale);
+startButtonBrennan.addEventListener('click', startGameBrennan);
 restartButton.addEventListener('click', restartGame);
 
 // MINIGAME LOGIC
