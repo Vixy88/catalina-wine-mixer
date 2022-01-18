@@ -11,6 +11,7 @@ const gridWrapper = document.querySelector('.grid-wrapper');
 const numberOfCells = 209;
 const cells = [];
 const rowLength = 19;
+const champagneBottles = [];
 
 // CREATE GRID
 function createGrid() {
@@ -19,6 +20,8 @@ function createGrid() {
     cell.classList.add('cell');
     if (Math.random() > 0.9) {
       cell.classList.add('champagneBottle');
+      const champagneBottle = document.querySelectorAll('.champagneBottle');
+      champagneBottles.push(champagneBottle);
     }
     grid.append(cell);
     cells.push(cell);
@@ -53,6 +56,11 @@ const handleKeydown = (event) => {
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
+      champagneBottles.pop();
+      if (champagneBottles.length === 0) {
+        alert('YOU WON!');
+      }
+      document.getElementById('audio').play();
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
@@ -68,6 +76,11 @@ const handleKeydown = (event) => {
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
+      champagneBottles.pop();
+      if (champagneBottles.length === 0) {
+        alert('YOU WON!');
+      }
+      document.getElementById('audio').play();
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
@@ -83,6 +96,11 @@ const handleKeydown = (event) => {
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
+      champagneBottles.pop();
+      if (champagneBottles.length === 0) {
+        alert('YOU WON!');
+      }
+      document.getElementById('audio').play();
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
@@ -98,6 +116,11 @@ const handleKeydown = (event) => {
     if (playerDiv.classList.contains('champagneBottle')) {
       playerScore++;
       playerDiv.classList.remove('champagneBottle');
+      champagneBottles.pop();
+      if (champagneBottles.length === 0) {
+        alert('YOU WON!');
+      }
+      document.getElementById('audio').play();
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
@@ -112,7 +135,7 @@ document.addEventListener('keydown', handleKeydown);
 // COUNTDOWN TIMER LOGIC
 
 const countDownClock = document.querySelector('#countDownTimer');
-let startTime = 2;
+let startTime = 20;
 
 function countDownTimer() {
   const countdown = setInterval(function () {
@@ -122,7 +145,7 @@ function countDownTimer() {
       const gameLostSection = document.createElement('section');
       gameLostSection.classList.add('game-lost');
       main.append(gameLostSection);
-      // alert('You lost and ruined the Catalina Wine Mixer 2022');
+      alert('You lost and ruined the Catalina Wine Mixer 2022');
       clearInterval(countdown);
     } else {
       countDownClock.textContent = startTime;
