@@ -112,27 +112,23 @@ document.addEventListener('keydown', handleKeydown);
 // COUNTDOWN TIMER LOGIC
 
 const countDownClock = document.querySelector('#countDownTimer');
-let startTime = 5;
+let startTime = 2;
 
 function countDownTimer() {
-  setInterval(function () {
+  const countdown = setInterval(function () {
     if (startTime === 0) {
-      clearInterval(setInterval);
-      countDownClock.textContent = 'You Lost!';
+      const main = document.querySelector('main')
+      main.classList.add('hide');
+      const gameLostSection = document.createElement('section');
+      gameLostSection.classList.add('game-lost');
+      main.append(gameLostSection);
+      // alert('You lost and ruined the Catalina Wine Mixer 2022');
+      clearInterval(countdown);
     } else {
       countDownClock.textContent = startTime;
       startTime -= 1;
     }
   }, 1000);
-}
-
-function gameLost() {
-  if (startTime === 0) {
-    document.querySelector('main').classList.add('hide');
-    const gameLostSection = document.createElement('section');
-    gameLostSection.classList.add('game-lost');
-    document.querySelector('body').append(gameLostSection);
-  }
 }
 
 // START GAME LOGIC
@@ -156,12 +152,24 @@ function restartGame() {
   window.location.reload();
 }
 
-// Eventlisteners
+// losing game logic
+function gameLost() {
+  if (startTime === 0) {
+    document.querySelector('main').classList.add('hide');
+    const gameLostSection = document.createElement('section');
+    gameLostSection.classList.add('game-lost');
+    document.querySelector('main').append(gameLostSection);
+    alert('You lost and ruined the Catalina Wine Mixer 2022');
+  }
+}
+
+// Event listeners
 startButtonDale.addEventListener('click', startGameDale);
 startButtonBrennan.addEventListener('click', startGameBrennan);
 restartButton.addEventListener('click', restartGame);
+document.addEventListener('onload', gameLost);
 
-// MINIGAME LOGIC
+// MINI GAME LOGIC
 let submitButton = document.getElementById('submitBtn');
 const miniGameSection = document.querySelector('.mini-game-section');
 
