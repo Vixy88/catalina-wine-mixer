@@ -112,7 +112,7 @@ document.addEventListener('keydown', handleKeydown);
 // COUNTDOWN TIMER LOGIC
 
 const countDownClock = document.querySelector('#countDownTimer');
-let startTime = 60;
+let startTime = 5;
 
 function countDownTimer() {
   setInterval(function () {
@@ -123,8 +123,16 @@ function countDownTimer() {
       countDownClock.textContent = startTime;
       startTime -= 1;
     }
-
   }, 1000);
+}
+
+function gameLost() {
+  if (startTime === 0) {
+    document.querySelector('main').classList.add('hide');
+    const gameLostSection = document.createElement('section');
+    gameLostSection.classList.add('game-lost');
+    document.querySelector('body').append(gameLostSection);
+  }
 }
 
 // START GAME LOGIC
