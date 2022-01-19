@@ -131,7 +131,7 @@ document.addEventListener('keydown', handleKeydown);
 // COUNTDOWN TIMER LOGIC
 
 const countDownClock = document.querySelector('#countDownTimer');
-let startTime = 180;
+let startTime = 5;
 
 function countDownTimer() {
   const countdown = setInterval(function () {
@@ -170,17 +170,8 @@ const startGameBrennan = () => {
 
 // restarts the game if the player wants to - this will restart the whole game when clicked
 function restartGame() {
-  window.location.reload();
-}
-
-// losing game logic
-function gameLost() {
-  if (startTime === 0) {
-    document.querySelector('main').classList.add('hide');
-    const gameLostSection = document.createElement('section');
-    gameLostSection.classList.add('game-lost');
-    document.querySelector('main').append(gameLostSection);
-    alert('You lost and ruined the Catalina Wine Mixer 2022');
+  if (confirm('Are you sure you want to restart the game? - you will lose all your progress')) {
+    window.location.reload();
   }
 }
 
