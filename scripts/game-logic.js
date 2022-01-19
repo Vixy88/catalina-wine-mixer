@@ -136,13 +136,12 @@ let startTime = 5;
 function countDownTimer() {
   const countdown = setInterval(function () {
     if (startTime === 0) {
-      const main = document.querySelector('main')
-      main.classList.add('hide');
+      const body = document.querySelector('body');
+      body.classList.add('hide');
       const gameLostSection = document.createElement('section');
-      const gameLostDiv = document.createElement('div');
-      gameLostDiv.innerHTML = ''
+      gameLostSection.innerHTML = '<div><p>Oh no! You Ruined the Catalina Wine Mixer!!</p></div>';
       gameLostSection.classList.add('game-lost');
-      main.append(gameLostSection);
+      body.append(gameLostSection);
       alert('You lost and ruined the Catalina Wine Mixer 2022');
       clearInterval(countdown);
     } else {
