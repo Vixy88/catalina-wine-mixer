@@ -6,6 +6,8 @@
 
 html, body {
   font-family: 'Press Start 2P', cursive;
+  height: 100%;
+  overflow: hidden;
 }
 
 h1 {
@@ -21,7 +23,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 /* BUTTONS */
@@ -68,6 +69,7 @@ main {
   align-items: center;
   border: 2px #000 solid;
   padding: 100px 30px;
+  margin-top: 35px;
 }
 
 .display-game-section {
@@ -95,6 +97,14 @@ main {
   width: 200px;
   height: auto;
 
+}
+
+.game-header-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 1000px;
 }
 
 .hud-bar-section {

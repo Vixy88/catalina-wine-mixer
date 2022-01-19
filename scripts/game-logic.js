@@ -139,6 +139,8 @@ function countDownTimer() {
       const main = document.querySelector('main')
       main.classList.add('hide');
       const gameLostSection = document.createElement('section');
+      const gameLostDiv = document.createElement('div');
+      gameLostDiv.innerHTML = ''
       gameLostSection.classList.add('game-lost');
       main.append(gameLostSection);
       alert('You lost and ruined the Catalina Wine Mixer 2022');
