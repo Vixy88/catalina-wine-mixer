@@ -179,7 +179,6 @@ function restartGame() {
 startButtonDale.addEventListener('click', startGameDale);
 startButtonBrennan.addEventListener('click', startGameBrennan);
 restartButton.addEventListener('click', restartGame);
-document.addEventListener('onload', gameLost);
 
 // MINI GAME LOGIC
 let submitButton = document.getElementById('submitBtn');
