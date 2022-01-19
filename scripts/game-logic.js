@@ -8,7 +8,7 @@ const gameScreenDisplay = document.querySelector('.display-game-section');
 const landingPageScreen = document.querySelector('.landing-page-section');
 const grid = document.querySelector('.grid');
 const gridWrapper = document.querySelector('.grid-wrapper');
-const numberOfCells = 209;
+const numberOfCells = 180;
 const cells = [];
 const rowLength = 19;
 const champagneBottles = [];
@@ -50,7 +50,6 @@ const handleKeydown = (event) => {
     cells[playerCurrentPosition].classList.remove('characterDale');
     playerCurrentPosition += 1;
     cells[playerCurrentPosition].classList.add('characterDale');
-    playerDiv.scrollIntoView();
     console.log(`Player Index position: ${playerCurrentPosition}`);
     // CHAMPAGNE COLLECTION LOGIC
     if (playerDiv.classList.contains('champagneBottle')) {
@@ -70,7 +69,6 @@ const handleKeydown = (event) => {
     cells[playerCurrentPosition].classList.remove('characterDale');
     playerCurrentPosition -= 1;
     cells[playerCurrentPosition].classList.add('characterDale');
-    playerDiv.scrollIntoView();
     console.log(`Player Index position: ${playerCurrentPosition}`);
     // CHAMPAGNE COLLECTION LOGIC
     if (playerDiv.classList.contains('champagneBottle')) {
@@ -90,7 +88,6 @@ const handleKeydown = (event) => {
     cells[playerCurrentPosition].classList.remove('characterDale');
     playerCurrentPosition += rowLength;
     cells[playerCurrentPosition].classList.add('characterDale');
-    playerDiv.scrollIntoView();
     console.log(`Player Index position: ${playerCurrentPosition}`);
     // CHAMPAGNE COLLECTION LOGIC
     if (playerDiv.classList.contains('champagneBottle')) {
@@ -110,7 +107,6 @@ const handleKeydown = (event) => {
     cells[playerCurrentPosition].classList.remove('characterDale');
     playerCurrentPosition -= rowLength;
     cells[playerCurrentPosition].classList.add('characterDale');
-    playerDiv.scrollIntoView();
     console.log(`Player Index position: ${playerCurrentPosition}`);
     // CHAMPAGNE COLLECTION LOGIC
     if (playerDiv.classList.contains('champagneBottle')) {
@@ -135,7 +131,7 @@ document.addEventListener('keydown', handleKeydown);
 // COUNTDOWN TIMER LOGIC
 
 const countDownClock = document.querySelector('#countDownTimer');
-let startTime = 20;
+let startTime = 180;
 
 function countDownTimer() {
   const countdown = setInterval(function () {
