@@ -10,7 +10,7 @@ const grid = document.querySelector('.grid');
 const gridWrapper = document.querySelector('.grid-wrapper');
 const numberOfCells = 180;
 const cells = [];
-const rowLength = 19;
+const rowLength = 22;
 const champagneBottles = [];
 
 // CREATE GRID
