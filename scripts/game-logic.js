@@ -1,6 +1,7 @@
 console.log('TEST: JavaScript file is working');
 
 // const variables
+const body = document.querySelector('body');
 const startButtonDale = document.querySelector('.startBtnDale'); // GRAB BUTTON and store in variable
 const startButtonBrennan = document.querySelector('.startBtnBrennan'); // GRAB BUTTON and store in variable
 const restartButton = document.getElementById('restartBtn');
@@ -38,15 +39,12 @@ function addCharacter() {
 }
 
 // PLAYER CONTROLLER
-let playerY = 0;
 let playerScore = 0;
 let playerCurrentPosition = 0;
 
 const handleKeydown = (event) => {
   const playerDiv = document.querySelector('.cell.characterDale');
-
-
-  if (event.code === 'ArrowRight' && playerCurrentPosition < 208) {
+  if (event.code === 'ArrowRight' && playerCurrentPosition < 176) {
     cells[playerCurrentPosition].classList.remove('characterDale');
     playerCurrentPosition += 1;
     cells[playerCurrentPosition].classList.add('characterDale');
@@ -89,7 +87,7 @@ const handleKeydown = (event) => {
       startTime++;
     }
   }
-  if (event.code === 'ArrowDown' && playerCurrentPosition < 190) {
+  if (event.code === 'ArrowDown' && playerCurrentPosition < 154) {
     // move player down but stop if reach the border
     cells[playerCurrentPosition].classList.remove('characterDale');
     playerCurrentPosition += rowLength;
@@ -111,7 +109,7 @@ const handleKeydown = (event) => {
       startTime++;
     }
   }
-  if (event.code === 'ArrowUp' && playerCurrentPosition > 18) {
+  if (event.code === 'ArrowUp' && playerCurrentPosition > 22) {
     // move player up but stop if reach the border
     cells[playerCurrentPosition].classList.remove('characterDale');
     playerCurrentPosition -= rowLength;
@@ -137,8 +135,6 @@ const handleKeydown = (event) => {
     miniGameOne();
   }
 };
-
-document.addEventListener('keydown', handleKeydown);
 
 // COUNTDOWN TIMER LOGIC
 
@@ -177,16 +173,32 @@ const startGameBrennan = () => {
 };
 
 // restarts the game if the player wants to - this will restart the whole game when clicked
-function restartGame() {
+function restartGameBrennan() {
   if (confirm('Are you sure you want to restart the game? - you will lose all your progress')) {
-    window.location.reload();
+    // window.location.reload(false);
+    resetGlobalVariables();
   }
+}
+
+function resetGlobalVariables() {
+  startTime = 25; // reset start time to 25 seconds
+  playerScore = 0; // reset player score to 0
+  Number(document.getElementById('playerScore').innerHTML = playerScore);
+  // Reset Players Position to start position
+  cells[playerCurrentPosition].classList.remove('characterDale');
+  playerCurrentPosition = 0;
+  cells[playerCurrentPosition].classList.add('characterDale');
+  // Remove current Grid
+  grid.classList.remove('cell');
+  // Create new grid
+  createGrid();
 }
 
 // Event listeners
 startButtonDale.addEventListener('click', startGameDale);
 startButtonBrennan.addEventListener('click', startGameBrennan);
-restartButton.addEventListener('click', restartGame);
+restartButton.addEventListener('click', restartGameBrennan);
+body.addEventListener('keydown', handleKeydown);
 
 // MINI GAME LOGIC
 let submitButton = document.getElementById('submitBtn');
