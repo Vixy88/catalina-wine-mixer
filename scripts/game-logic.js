@@ -57,7 +57,10 @@ const handleKeydown = (event) => {
       playerDiv.classList.remove('champagneBottle');
       champagneBottles.pop();
       if (champagneBottles.length === 0) {
-        alert('YOU WON!');
+        const main = document.querySelector('main');
+        const winScreenSection = document.querySelector('.win-screen-section');
+        main.classList.add('hide');
+        winScreenSection.classList.remove('hide');
       }
       document.getElementById('audio').play();
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
@@ -76,7 +79,10 @@ const handleKeydown = (event) => {
       playerDiv.classList.remove('champagneBottle');
       champagneBottles.pop();
       if (champagneBottles.length === 0) {
-        alert('YOU WON!');
+        const main = document.querySelector('main');
+        const winScreenSection = document.querySelector('.win-screen-section');
+        main.classList.add('hide');
+        winScreenSection.classList.remove('hide');
       }
       document.getElementById('audio').play();
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
@@ -95,7 +101,10 @@ const handleKeydown = (event) => {
       playerDiv.classList.remove('champagneBottle');
       champagneBottles.pop();
       if (champagneBottles.length === 0) {
-        alert('YOU WON!');
+        const main = document.querySelector('main');
+        const winScreenSection = document.querySelector('.win-screen-section');
+        main.classList.add('hide');
+        winScreenSection.classList.remove('hide');
       }
       document.getElementById('audio').play();
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
@@ -114,7 +123,10 @@ const handleKeydown = (event) => {
       playerDiv.classList.remove('champagneBottle');
       champagneBottles.pop();
       if (champagneBottles.length === 0) {
-        alert('YOU WON!');
+        const main = document.querySelector('main');
+        const winScreenSection = document.querySelector('.win-screen-section');
+        main.classList.add('hide');
+        winScreenSection.classList.remove('hide');
       }
       document.getElementById('audio').play();
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
@@ -131,16 +143,15 @@ document.addEventListener('keydown', handleKeydown);
 // COUNTDOWN TIMER LOGIC
 
 const countDownClock = document.querySelector('#countDownTimer');
-let startTime = 5;
+let startTime = 25;
 
 function countDownTimer() {
   const countdown = setInterval(function () {
     if (startTime === 0) {
       const main = document.querySelector('main');
-      const winScreenSection = document.querySelector('.win-screen-section');
+      const loseScreenSection = document.querySelector('.lose-screen-section');
       main.classList.add('hide');
-      winScreenSection.classList.remove('hide');
-      // alert('You lost and ruined the Catalina Wine Mixer 2022');
+      loseScreenSection.classList.remove('hide');
       clearInterval(countdown);
     } else {
       countDownClock.textContent = startTime;

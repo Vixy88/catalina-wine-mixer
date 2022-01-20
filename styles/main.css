@@ -201,12 +201,16 @@ main {
   cursor: pointer; /* Add a pointer on hover */;
 }
 
-.win-screen-section {
+.lose-screen-section, .win-screen-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   height: 100%;
+}
+
+.lose-screen-section h2, p {
+  margin: 25px 0;
 }
 
 .win-screen-section h2, p {
