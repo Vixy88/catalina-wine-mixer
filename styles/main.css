@@ -121,7 +121,7 @@ main {
 
 .grid-wrapper {
   width: 1000px;
-  height: 600px;
+  height: 100%;
 }
 
 .grid {
@@ -142,10 +142,6 @@ main {
   cursor: pointer;
   color: #fff;
   background-size: contain;
-}
-
-.hide {
-  display: none;
 }
 
 .champagneBottle {
@@ -215,4 +211,8 @@ main {
 
 .win-screen-section h2, p {
   margin: 25px 0;
+}
+
+.hide {
+  display: none;
 }
