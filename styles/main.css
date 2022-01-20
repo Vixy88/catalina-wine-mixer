@@ -200,3 +200,15 @@ main {
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */;
 }
+
+.win-screen-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.win-screen-section h2, p {
+  margin: 25px 0;
+}

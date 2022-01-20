@@ -136,9 +136,11 @@ let startTime = 5;
 function countDownTimer() {
   const countdown = setInterval(function () {
     if (startTime === 0) {
-      const main = document.querySelectorAll('section');
+      const main = document.querySelector('main');
+      const winScreenSection = document.querySelector('.win-screen-section');
       main.classList.add('hide');
-      alert('You lost and ruined the Catalina Wine Mixer 2022');
+      winScreenSection.classList.remove('hide');
+      // alert('You lost and ruined the Catalina Wine Mixer 2022');
       clearInterval(countdown);
     } else {
       countDownClock.textContent = startTime;
