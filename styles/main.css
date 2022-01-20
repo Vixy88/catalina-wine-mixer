@@ -158,6 +158,13 @@ main {
   position: relative;
 }
 
+.characterBrennan {
+  background-image: url(/assets/images/Brennan.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 /* MINI GAMES STYLING */
 
 .mini-game-grid-wrapper {

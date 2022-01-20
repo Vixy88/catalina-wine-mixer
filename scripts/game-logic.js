@@ -27,15 +27,17 @@ function createGrid() {
     grid.append(cell);
     cells.push(cell);
   }
-  addCharacter();
 }
 
-createGrid();
-
 // Function that adds the class containing the image of the Dale Character to the first cell on the grid
-function addCharacter() {
+function addCharacterDale() {
   let characterStartingPosition = document.querySelector('.cell');
   characterStartingPosition.classList.add('characterDale');
+}
+
+function addCharacterBrennan() {
+  let characterStartingPosition = document.querySelector('.cell');
+  characterStartingPosition.classList.add('characterBrennan');
 }
 
 // PLAYER CONTROLLER
@@ -161,6 +163,8 @@ function countDownTimer() {
 const startGameDale = () => {
   gameScreenDisplay.classList.remove('hide'); // removes the class that hides the game screen on DOM load
   landingPageScreen.classList.add('hide'); // adds the class that hides the landing page screen
+  createGrid();
+  addCharacterDale();
   countDownTimer();
   console.log('TEST: The Game successfully started, playing with Dale');
 };
@@ -168,6 +172,8 @@ const startGameDale = () => {
 const startGameBrennan = () => {
   gameScreenDisplay.classList.remove('hide'); // removes the class that hides the game screen on DOM load
   landingPageScreen.classList.add('hide'); // adds the class that hides the landing page screen
+  createGrid();
+  addCharacterBrennan();
   countDownTimer();
   console.log('TEST: The Game successfully started, playing with Brennan');
 };
@@ -189,9 +195,11 @@ function resetGlobalVariables() {
   playerCurrentPosition = 0;
   cells[playerCurrentPosition].classList.add('characterDale');
   // Remove current Grid
-  grid.classList.remove('cell');
+  gridWrapper.remove('cell');
   // Create new grid
-  createGrid();
+  const grid = document.createElement('div');
+  grid.classList.add('grid');
+  gameScreenDisplay.append(grid);
 }
 
 // Event listeners
