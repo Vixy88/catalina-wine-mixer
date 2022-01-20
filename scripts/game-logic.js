@@ -9,9 +9,9 @@ const gameScreenDisplay = document.querySelector('.display-game-section');
 const landingPageScreen = document.querySelector('.landing-page-section');
 const grid = document.querySelector('.grid');
 const gridWrapper = document.querySelector('.grid-wrapper');
-const numberOfCells = 108;
+const numberOfCells = 100;
 const cells = [];
-const rowLength = 18;
+const rowLength = 10;
 const champagneBottles = [];
 
 let currentPlayer = 'characterDale';
@@ -44,7 +44,7 @@ let playerCurrentPosition = 0;
 
 const handleKeydown = (event) => {
   const playerDiv = document.querySelector(`.${currentPlayer}`);
-  if (event.code === 'ArrowRight' && playerCurrentPosition < 176) {
+  if (event.code === 'ArrowRight' && playerCurrentPosition < 99) {
     cells[playerCurrentPosition].classList.remove(currentPlayer);
     playerCurrentPosition += 1;
     cells[playerCurrentPosition].classList.add(currentPlayer);
@@ -87,7 +87,7 @@ const handleKeydown = (event) => {
       startTime++;
     }
   }
-  if (event.code === 'ArrowDown' && playerCurrentPosition < 154) {
+  if (event.code === 'ArrowDown' && playerCurrentPosition < 90) {
     // move player down but stop if reach the border
     cells[playerCurrentPosition].classList.remove(currentPlayer);
     playerCurrentPosition += rowLength;
@@ -109,7 +109,7 @@ const handleKeydown = (event) => {
       startTime++;
     }
   }
-  if (event.code === 'ArrowUp' && playerCurrentPosition > 22) {
+  if (event.code === 'ArrowUp' && playerCurrentPosition > 9) {
     // move player up but stop if reach the border
     cells[playerCurrentPosition].classList.remove(currentPlayer);
     playerCurrentPosition -= rowLength;
@@ -192,6 +192,7 @@ function restartGameBrennan() {
   }
 }
 
+// Function used to launch new game from the win and lose game views
 function launchNewGame() {
   window.location.reload(false);
 }

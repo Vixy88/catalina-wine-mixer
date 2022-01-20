@@ -124,22 +124,26 @@ button:hover {
 
 .grid-wrapper {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid {
-  align-items: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  height: auto;
-  width: 100%;
+  height: 400px;
+  width: 1000px;
   justify-content: center;
   border: 2px solid #000;
   background-color: #567d46;
 }
 
 .grid div {
-  flex-grow: 1;
-  padding: 22px;
+  width: 10%;
+  height: 10%;
   text-align: center;
   cursor: pointer;
   color: #fff;
@@ -177,8 +181,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  height: 50vh;
   width: 100%;
   justify-content: space-between;
   border: 2px solid #000;
@@ -186,8 +188,12 @@ button:hover {
   padding: 30px;
 }
 
+.mini-game-display h2 {
+  margin: 20px;
+}
+
 .mini-game-explanation {
-  margin: 0 150px;
+  margin: 20px 100px;
   text-align: center;
 }
 
