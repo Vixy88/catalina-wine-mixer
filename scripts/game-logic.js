@@ -224,3 +224,114 @@ submitButton.addEventListener('click', function () {
     document.getElementById('incorrectOne').classList.remove('hide');
   }
 });
+
+
+// MOBILE CONTROLS
+
+const btnUp = document.getElementById('upBtn');
+const btnLeft = document.getElementById('leftBtn');
+const btnRight = document.getElementById('rightBtn');
+const btnDown = document.getElementById('downBtn');
+
+btnUp.addEventListener('click', () => {
+  const playerDiv = document.querySelector(`.${currentPlayer}`);
+  if (playerCurrentPosition > 9) {
+    // move player up but stop if reach the border
+    cells[playerCurrentPosition].classList.remove(currentPlayer);
+    playerCurrentPosition -= rowLength;
+    cells[playerCurrentPosition].classList.add(currentPlayer);
+    console.log(`Player Index position: ${playerCurrentPosition}`);
+    // CHAMPAGNE COLLECTION LOGIC
+    if (playerDiv.classList.contains('champagneBottle')) {
+      playerScore++;
+      playerDiv.classList.remove('champagneBottle');
+      champagneBottles.pop();
+      if (champagneBottles.length === 0) {
+        const main = document.querySelector('main');
+        const winScreenSection = document.querySelector('.win-screen-section');
+        main.classList.add('hide');
+        winScreenSection.classList.remove('hide');
+      }
+      document.getElementById('audio').play();
+      playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
+      startTime++;
+    }
+  }
+});
+
+btnLeft.addEventListener('click', () => {
+  const playerDiv = document.querySelector(`.${currentPlayer}`);
+  if (playerCurrentPosition > 0) {
+    // move player left but stop if reach the border
+    cells[playerCurrentPosition].classList.remove(currentPlayer);
+    playerCurrentPosition -= 1;
+    cells[playerCurrentPosition].classList.add(currentPlayer);
+    console.log(`Player Index position: ${playerCurrentPosition}`);
+    // CHAMPAGNE COLLECTION LOGIC
+    if (playerDiv.classList.contains('champagneBottle')) {
+      playerScore++;
+      playerDiv.classList.remove('champagneBottle');
+      champagneBottles.pop();
+      if (champagneBottles.length === 0) {
+        const main = document.querySelector('main');
+        const winScreenSection = document.querySelector('.win-screen-section');
+        main.classList.add('hide');
+        winScreenSection.classList.remove('hide');
+      }
+      document.getElementById('audio').play();
+      playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
+      startTime++;
+    }
+  }
+});
+
+btnRight.addEventListener('click', () => {
+  const playerDiv = document.querySelector(`.${currentPlayer}`);
+  if (playerCurrentPosition < 99) {
+    cells[playerCurrentPosition].classList.remove(currentPlayer);
+    playerCurrentPosition += 1;
+    cells[playerCurrentPosition].classList.add(currentPlayer);
+    console.log(`Player Index position: ${playerCurrentPosition}`);
+    // CHAMPAGNE COLLECTION LOGIC
+    if (playerDiv.classList.contains('champagneBottle')) {
+      playerScore++;
+      playerDiv.classList.remove('champagneBottle');
+      champagneBottles.pop();
+      if (champagneBottles.length === 0) {
+        const main = document.querySelector('main');
+        const winScreenSection = document.querySelector('.win-screen-section');
+        main.classList.add('hide');
+        winScreenSection.classList.remove('hide');
+      }
+      document.getElementById('audio').play();
+      playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
+      startTime++;
+    }
+  }
+});
+
+btnDown.addEventListener('click', () => {
+  const playerDiv = document.querySelector(`.${currentPlayer}`);
+  if (playerCurrentPosition < 90) {
+    // move player down but stop if reach the border
+    cells[playerCurrentPosition].classList.remove(currentPlayer);
+    playerCurrentPosition += rowLength;
+    cells[playerCurrentPosition].classList.add(currentPlayer);
+    console.log(`Player Index position: ${playerCurrentPosition}`);
+    // CHAMPAGNE COLLECTION LOGIC
+    if (playerDiv.classList.contains('champagneBottle')) {
+      playerScore++;
+      playerDiv.classList.remove('champagneBottle');
+      champagneBottles.pop();
+      if (champagneBottles.length === 0) {
+        const main = document.querySelector('main');
+        const winScreenSection = document.querySelector('.win-screen-section');
+        main.classList.add('hide');
+        winScreenSection.classList.remove('hide');
+      }
+      document.getElementById('audio').play();
+      playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
+      startTime++;
+    }
+  }
+});
