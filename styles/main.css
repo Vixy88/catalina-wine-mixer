@@ -63,6 +63,14 @@ button:hover {
   opacity: 0.7;
 }
 
+.mobileBtn {
+  padding: 5px 10px;
+  margin-top: 10px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
 /* END OF BUTTONS */
 
 .landing-page-section {
