@@ -256,6 +256,9 @@ btnUp.addEventListener('click', () => {
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
+    if (playerScore === 5) {
+      miniGameOne();
+    }
   }
 });
 
@@ -282,6 +285,9 @@ btnLeft.addEventListener('click', () => {
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
     }
+    if (playerScore === 5) {
+      miniGameOne();
+    }
   }
 });
 
@@ -306,6 +312,9 @@ btnRight.addEventListener('click', () => {
       document.getElementById('audio').play();
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
+    }
+    if (playerScore === 5) {
+      miniGameOne();
     }
   }
 });
@@ -332,6 +341,9 @@ btnDown.addEventListener('click', () => {
       document.getElementById('audio').play();
       playerScore = Number(document.getElementById('playerScore').innerHTML = playerScore);
       startTime++;
+    }
+    if (playerScore === 5) {
+      miniGameOne();
     }
   }
 });
