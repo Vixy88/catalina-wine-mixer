@@ -12,7 +12,7 @@ const gridWrapper = document.querySelector('.grid-wrapper');
 const countDownClock = document.querySelector('#countDownTimer'); // grabs the count down timer in the DOM and stores in variable
 const numberOfCells = 100;
 const cells = [];
-const rowLength = 10;
+const rowLength = 10; // sets the row length of the game for the movement function Up and Down to work
 const champagneBottles = [];
 const mobileNavigation = document.querySelector('.mobileNavigation');
 
@@ -22,14 +22,14 @@ let startTime = 25;
 
 // CREATE GRID
 function createGrid() {
-  grid.innerHTML = ''; // HTML inside of grid is set as blank
+  grid.innerHTML = ''; // HTML inside of grid is set as blank ** without this the restart function does not work
   for (let i = 0; i < numberOfCells; i++) {
     const cell = document.createElement('div');
     cell.classList.add('cell');
-    if (Math.random() > 0.9) {
+    if (Math.random() > 0.9) { // Creats random number of champagne bottles and places them in the grid
       cell.classList.add('champagneBottle');
       const champagneBottle = document.querySelectorAll('.champagneBottle');
-      champagneBottles.push(champagneBottle);
+      champagneBottles.push(champagneBottle); // pushes champagneBottle instances into the champagneBottles array
     }
     grid.append(cell);
     cells[i] = cell;
