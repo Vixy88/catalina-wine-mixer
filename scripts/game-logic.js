@@ -13,7 +13,9 @@ const numberOfCells = 100;
 const cells = [];
 const rowLength = 10;
 const champagneBottles = [];
+const mobileNavigation = document.querySelector('.mobileNavigation');
 
+// GLOBAL VARIABLES
 let currentPlayer = 'characterDale';
 
 // CREATE GRID
@@ -161,6 +163,8 @@ function countDownTimer() {
 function startGame() {
   gameScreenDisplay.classList.remove('hide'); // removes the class that hides the game screen on DOM load
   landingPageScreen.classList.add('hide'); // adds the class that hides the landing page screen
+  mobileNavigation.classList.remove('hide');
+
   createGrid();
   addCharacter();
   countDownTimer();
