@@ -245,11 +245,6 @@ button:hover {
   .mobileNavigation {
     display: none;
   }
-
-  iframe {
-    width: 400px;
-    height: 300px;
-  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -257,8 +252,17 @@ button:hover {
     padding-top: 20px;
   }
 
+  .landing-page-section {
+    border: none;
+  }
+
   .landing-page-section h1 {
     width: 80vw;
+  }
+
+  iframe {
+    width: 400px;
+    height: 300px;
   }
 
 }
