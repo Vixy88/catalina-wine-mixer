@@ -79,8 +79,14 @@ button:hover {
   justify-content: center;
   align-items: center;
   border: 2px #000 solid;
-  padding: 100px 30px;
+  padding: 50px 30px;
   margin-top: 35px;
+}
+
+.instructions {
+  font-size: 0.5rem;
+  padding: 30px;
+  margin: 0 30px;
 }
 
 .display-game-section {

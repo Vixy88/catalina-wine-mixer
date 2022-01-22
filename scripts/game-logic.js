@@ -9,6 +9,7 @@ const gameScreenDisplay = document.querySelector('.display-game-section');
 const landingPageScreen = document.querySelector('.landing-page-section');
 const grid = document.querySelector('.grid');
 const gridWrapper = document.querySelector('.grid-wrapper');
+const countDownClock = document.querySelector('#countDownTimer'); // grabs the count down timer in the DOM and stores in variable
 const numberOfCells = 100;
 const cells = [];
 const rowLength = 10;
@@ -17,6 +18,7 @@ const mobileNavigation = document.querySelector('.mobileNavigation');
 
 // GLOBAL VARIABLES
 let currentPlayer = 'characterDale';
+let startTime = 25;
 
 // CREATE GRID
 function createGrid() {
@@ -138,10 +140,7 @@ const handleKeydown = (event) => {
   }
 };
 
-// COUNTDOWN TIMER LOGIC
-
-const countDownClock = document.querySelector('#countDownTimer');
-let startTime = 25;
+// COUNTDOWN TIMER
 
 function countDownTimer() {
   const countdown = setInterval(function () {
@@ -164,17 +163,19 @@ function startGame() {
   gameScreenDisplay.classList.remove('hide'); // removes the class that hides the game screen on DOM load
   landingPageScreen.classList.add('hide'); // adds the class that hides the landing page screen
   mobileNavigation.classList.remove('hide'); // shows the mobile controls when starting the game (Mobile Only)
-  createGrid();
-  addCharacter();
-  countDownTimer();
+  createGrid(); // Creates a grid when the game is started
+  addCharacter(); // adds the character to the grid when game is started
+  countDownTimer(); // starts the countdown clock
 }
 
+// This function sets the playable character as Dale
 const startGameDale = () => {
   currentPlayer = 'characterDale';
   startGame();
   console.log('TEST: The Game successfully started, playing with Dale');
 };
 
+// This function sets the playable character as Brennan
 const startGameBrennan = () => {
   currentPlayer = 'characterBrennan';
   startGame();
