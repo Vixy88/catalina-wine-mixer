@@ -245,4 +245,9 @@ button:hover {
   .mobileNavigation {
     display: none;
   }
+
+  iframe {
+    width: 400px;
+    height: 300px;
+  }
 }
