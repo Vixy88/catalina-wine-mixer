@@ -163,8 +163,7 @@ function countDownTimer() {
 function startGame() {
   gameScreenDisplay.classList.remove('hide'); // removes the class that hides the game screen on DOM load
   landingPageScreen.classList.add('hide'); // adds the class that hides the landing page screen
-  mobileNavigation.classList.remove('hide');
-
+  mobileNavigation.classList.remove('hide'); // shows the mobile controls when starting the game (Mobile Only)
   createGrid();
   addCharacter();
   countDownTimer();
@@ -183,7 +182,7 @@ const startGameBrennan = () => {
 };
 
 // restarts the game if the player wants to - this will restart the whole game when clicked
-function restartGameBrennan() {
+function restartGame() {
   if (confirm('Are you sure you want to restart the game? - you will lose all your progress')) {
     startTime = 25; // reset start time to 25 seconds
     playerScore = 0; // reset player score to 0
@@ -204,7 +203,7 @@ function launchNewGame() {
 // Event listeners
 startButtonDale.addEventListener('click', startGameDale);
 startButtonBrennan.addEventListener('click', startGameBrennan);
-restartButton.addEventListener('click', restartGameBrennan);
+restartButton.addEventListener('click', restartGame);
 body.addEventListener('keydown', handleKeydown);
 
 // MINI GAME LOGIC

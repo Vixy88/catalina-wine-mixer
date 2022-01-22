@@ -246,6 +246,10 @@ button:hover {
     display: none;
   }
 
+  .display-game-section {
+    padding-top: 20px;
+  }
+
   iframe {
     width: 400px;
     height: 300px;
