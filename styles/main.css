@@ -1,252 +1,260 @@
+/* Variables */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #e74c3c;
+  --text-color: #ecf0f1;
+  --background-color: #1a1a1a;
+  --grid-cell-size: 50px;
+  --button-padding: 10px 20px;
+  --border-radius: 5px;
+  --transition-speed: 0.3s;
+}
+
+/* Reset and Base Styles */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-  font-family: 'Press Start 2P', cursive;
+html,
+body {
   height: 100%;
-  overflow: hidden;
-  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
+/* Typography */
 h1 {
-  font-size: 20px;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 20px 0;
+  color: var(--text-color);
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 15px 0;
 }
 
+/* Layout */
 main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-/* BUTTONS */
-
-.startBtnDale {
-  padding: 5px 10px;
-  background-color: #fdfd96;
-  color: #000;
-  margin-top: 30px;
+/* Button Styles */
+.btn {
+  padding: var(--button-padding);
+  border: none;
+  border-radius: var(--border-radius);
   cursor: pointer;
+  font-size: 1rem;
+  transition: transform var(--transition-speed),
+    background-color var(--transition-speed);
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.startBtnDale,
 .startBtnBrennan {
-  padding: 5px 10px;
-  background-color: #800020;
-  color: #fff;
-  margin-top: 30px;
-  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  margin: 10px;
+  min-width: 150px;
 }
 
 #restartBtn {
-  padding: 5px 10px;
-  background-color: red;
-  color: #fff;
-  cursor: pointer;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  position: fixed;
+  top: 20px;
+  right: 20px;
 }
 
 .newGameBtn {
-  padding: 5px 10px;
-  margin-top: 30px;
-  background-color: green;
-  color: #fff;
-  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  margin-top: 20px;
 }
 
-button:hover {
-  opacity: 0.7;
-}
-
+/* Mobile Controls */
 .mobileBtn {
-  padding: 5px 10px;
-  margin-top: 10px;
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--text-color);
+  padding: 15px;
+  margin: 5px;
+  border-radius: 50%;
+  display: none;
 }
 
-/* END OF BUTTONS */
-
+/* Game Sections */
 .landing-page-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px #000 solid;
-  padding: 50px 30px;
-  margin-top: 35px;
+  text-align: center;
+  padding: 40px;
 }
 
 .instructions {
-  font-size: 0.5rem;
-  padding: 30px;
-  margin: 0 30px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
 }
 
 .display-game-section {
-  padding-top: 50px;
-  width: 90vw;
+  width: 100%;
 }
 
 .game-title {
-  display: flex;
-  justify-content: center;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 30px;
 }
 
+/* Character Selection */
 .character-selection {
   display: flex;
   justify-content: center;
+  gap: 40px;
+  margin: 30px 0;
 }
 
 .character-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 20px;
+  text-align: center;
+  transition: transform var(--transition-speed);
+}
+
+.character-container:hover {
+  transform: scale(1.05);
 }
 
 .character-selection img {
-  width: 200px;
-  height: auto;
-
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
+/* Game HUD */
 .game-header-bar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
 }
 
 .hud-bar-section {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
+  gap: 20px;
 }
 
 .hud-bar-section div {
-  margin: 20px;
+  font-size: 1.2rem;
 }
 
+/* Game Grid */
 .grid-wrapper {
-  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin: 20px 0;
 }
 
 .grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 400px;
-  width: 1000px;
-  justify-content: center;
-  border: 2px solid #000;
-  background-color: #567d46;
+  display: grid;
+  grid-template-columns: repeat(10, var(--grid-cell-size));
+  gap: 2px;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: var(--border-radius);
 }
 
 .grid div {
-  width: 10%;
-  height: 10%;
-  text-align: center;
-  cursor: pointer;
-  color: #fff;
-  background-size: contain;
+  width: var(--grid-cell-size);
+  height: var(--grid-cell-size);
+  background-color: var(--primary-color);
+  border-radius: 3px;
+  transition: background-color var(--transition-speed);
 }
 
+/* Game Elements */
 .champagneBottle {
-  background-image: url(/assets/images/champagne-bottle.png);
-  background-position: center;
+  background-image: url('../assets/images/champagne-bottle.png');
+  background-size: contain;
   background-repeat: no-repeat;
-  position: relative;
+  background-position: center;
 }
 
 .characterDale {
-  background-image: url(/assets/images/dale.png);
-  background-position: center;
+  background-image: url('../assets/images/Dale.png');
+  background-size: contain;
   background-repeat: no-repeat;
-  position: relative;
+  background-position: center;
 }
 
 .characterBrennan {
-  background-image: url(/assets/images/brennan.png);
-  background-position: center;
+  background-image: url('../assets/images/Brennan.png');
+  background-size: contain;
   background-repeat: no-repeat;
-  position: relative;
+  background-position: center;
 }
 
-/* MINI GAMES STYLING */
-
+/* Mini Game */
 .mini-game-grid-wrapper {
-  height: 600px;
+  margin: 20px 0;
 }
 
 .mini-game-display {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-  border: 2px solid #000;
-  background-color: red;
+  background-color: var(--secondary-color);
   padding: 30px;
-}
-
-.mini-game-display h2 {
-  margin: 20px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .mini-game-explanation {
-  margin: 20px 100px;
-  text-align: center;
+  margin: 20px 0;
+  font-size: 1.1rem;
 }
 
+/* Game States */
 .game-lost {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.9); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */;
-}
-
-.lose-screen-section, .win-screen-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  color: var(--accent-color);
+  font-size: 1.5rem;
   text-align: center;
-  height: 100%;
+  margin: 20px 0;
 }
 
-.lose-screen-section h2, p {
-  margin: 25px 0;
+.lose-screen-section,
+.win-screen-section {
+  text-align: center;
+  padding: 40px;
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  margin: 20px auto;
+  max-width: 600px;
 }
 
-.win-screen-section h2, p {
-  margin: 25px 0;
-}
-
+/* Utility Classes */
 .hide {
-  display: none;
+  display: none !important;
 }
 
-/* MEDIA QUERIES */
-
+/* Media Queries */
 @media only screen and (min-width: 700px) {
   .mobileNavigation {
     display: none;
@@ -255,20 +263,88 @@ button:hover {
 
 @media only screen and (max-width: 700px) {
   .display-game-section {
-    padding-top: 20px;
+    padding: 10px;
   }
 
   .landing-page-section {
-    border: none;
+    padding: 20px;
   }
 
   .landing-page-section h1 {
-    width: 80vw;
+    font-size: 1.8rem;
   }
 
-  iframe {
-    width: 400px;
-    height: 300px;
+  .grid {
+    grid-template-columns: repeat(10, 30px);
   }
 
+  .grid div {
+    width: 30px;
+    height: 30px;
+  }
+
+  .mobileBtn {
+    display: inline-block;
+  }
+
+  .mobileNavigation {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: var(--border-radius);
+  }
+}
+
+.win-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: white;
+  text-align: center;
+}
+
+.win-screen h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fdfd96;
+}
+
+.win-screen h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.win-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.win-buttons .btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #fdfd96;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.win-buttons .btn:hover {
+  transform: scale(1.1);
 }
