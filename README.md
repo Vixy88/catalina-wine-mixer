@@ -1,54 +1,125 @@
-# Catalina Wine Mixer
+# 🍾 Catalina Wine Mixer Game
 
-I am building this game as part of my Software Engineering Course with General Assembly, this is my first individual project as part of the course.
+A fun browser-based game inspired by the movie "Step Brothers" where you play as either Dale or Brennan and collect champagne bottles before time runs out!
 
-We were tasked with creating a simple game with JavaScript, HTML/CSS.
+![Game Preview](assets/images/champagne-bottle.png)
 
-I have chosen to create a fun game that is based on the movie Stepbrothers.
-## Game Logic:
+## 🎮 How to Play
 
-The game is a simple game where the player has to complete the mini challenges to increase the time and complete the game and the below logic explains how the game works.
+1. Choose your character:
 
-- The Player starts with 25 seconds left
-- The Player starts with a score of 0
-- The Player can move freely around the screen
-- The Player has to collect champagne bottles to score points (1 point per bottle collected) when 5 champagne bottles has been collected it launches a mini challenge, the mini challenge will add 15 points to the player score if they answer correctly and continue the game. 
-- The game is completed when ALL champagne bottles have been collected
+   - Play as Dale (yellow shirt)
+   - Play as Brennan (burgundy shirt)
 
-## Alpha Features:
+2. Game Controls:
 
-- Character screen where you can choose between Brennan and Dale
-- 2d Characters (different shirt color dependant on the character)
-- Interface for the character to move around
-- Interface that shows score, timer and restart button
-- Mini challenge that has to be completed to continue and complete the game
-- Win Screen
-- Loose Screen
+   - Use arrow keys (↑ ← ↓ →) to move your character
+   - Mobile users can use on-screen buttons
+   - Collect champagne bottles to score points
+   - Watch your time - you start with 25 seconds!
 
+3. Winning Conditions:
+   - Collect all champagne bottles on the map
+   - Complete the game before time runs out
+   - The more bottles you collect, the higher your score!
 
-## Additional Features:
-- Traps that can be placed randomly on the interface for the character to avoid
-- Older brother chasing the character, if he catches them they die and the Catalina Wine Mixer is a failure
-- Persistent Leaderboard using << localStorage >> (for beta version)
+## 🚀 Quick Start
 
-## Instructions:
+### Option 1: Using Python (Recommended)
 
-- Run Right: Hold right arrow (release to stop)
-- Run Left: Hold left arrow (release to stop)
-- Run Down: Hold up arrow (release to stop)
-- Run Up: Hold down arrow (release to stop)
-- Walk Right: Press once right.
-- Walk left: Press once left.
-- Walk Up: Press arrow up.
-- Walk Down: Press arrow down.
+```bash
+# Navigate to the game directory
+cd catalina-wine-mixer
 
-## Play:
+# Start a local server (Python 3)
+python3 -m http.server 8000
 
-- Click << URL >> 
-- Choose Character
+# Open in your browser
+# Visit: http://localhost:8000
+```
 
+### Option 2: Using Node.js
 
+```bash
+# Install http-server globally
+npm install -g http-server
 
+# Start the server
+http-server
 
+# Open in your browser
+# Visit: http://localhost:8080
+```
 
+### Option 3: VS Code
 
+- Install the "Live Server" extension
+- Right-click on `index.html`
+- Select "Open with Live Server"
+
+## 🛠 Technical Details
+
+Built using:
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- No external dependencies!
+
+Features:
+
+- Responsive design
+- Mobile-friendly controls
+- Sound effects
+- Character selection
+- Score tracking
+- Timer system
+
+## 🎨 Assets
+
+The game includes:
+
+- Character sprites (Dale and Brennan)
+- Champagne bottle collectibles
+- Sound effects
+- Responsive UI elements
+
+## 🤝 Contributing
+
+Feel free to fork this project and make your own version! Some ideas for improvements:
+
+- Add more characters
+- Create different levels
+- Add power-ups
+- Implement a high-score system
+- Add more sound effects and music
+- Create additional challenges
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+## 🎬 Credits
+
+- Inspired by the movie "Step Brothers"
+- Created as part of the Software Engineering Course at General Assembly
+- Sound effects and images are used for educational purposes
+
+## 🐛 Known Issues
+
+- None currently! If you find any, please open an issue.
+
+## 🔮 Future Updates
+
+Planned features:
+
+- Leaderboard system
+- Additional characters
+- More challenging levels
+- Power-ups and special items
+- Background music
+- More mini-games
+
+---
+
+Made with ❤️ by Michael Jakobsen
