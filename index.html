@@ -1,128 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <link rel="stylesheet" href="/styles/main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="#">
-  <title>The Catalina Wine Mixer</title>
-</head>
-<body>
-  <main>
-    <!-- LANDING PAGE -->
-    <section class="landing-page-section">
-      <h1>THE CATALINA WINE MIXER GAME</h1>
-      <div class="character-selection">
-        <div class="character-container">
-          <div>
-            <img src="/assets/images/brennan-profile-image.png" alt="">
-          </div>
-          <button class="startBtnBrennan">Start Game with Brennan</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="#" />
+    <title>Catalina Wine Mixer</title>
+    <meta
+      name="description"
+      content="A fun game based on the movie Stepbrothers where you collect champagne bottles and complete mini-challenges"
+    />
+  </head>
+  <body>
+    <main>
+      <!-- Landing Page -->
+      <section class="landing-page-section">
+        <h1>Welcome to the Catalina Wine Mixer</h1>
+        <div class="instructions">
+          <h2>How to Play</h2>
+          <p>
+            Collect champagne bottles to score points and complete
+            mini-challenges. You start with 25 seconds - make them count!
+          </p>
+          <p>Controls:</p>
+          <ul>
+            <li>Arrow keys to move</li>
+            <li>Collect champagne bottles for points</li>
+            <li>Complete mini-challenges for bonus points</li>
+          </ul>
         </div>
-        <div class="character-container">
-          <div>
-            <img src="/assets/images/dale-profile-image.png" alt="">
+        <div class="character-selection">
+          <div class="character-container">
+            <img
+              src="/assets/images/dale-profile-image.png"
+              alt="Dale character"
+            />
+            <button class="btn startBtnDale">Play as Dale</button>
           </div>
-          <button class="startBtnDale">Start Game with Dale</button>
-        </div>
-      </div>
-      <div class="instructions">
-        <h2>How to Play</h2>
-        <p>Collect all champagne bottles on the map before the timer runs out</p>
-        <p>Controls: Use the keyboard arrows to move the player around</p>
-      </div>
-      <!-- Instructions -->
-    </section>
-    <!-- GAME SCREEN -->
-    <section class="display-game-section hide">
-      <div class="game-header-bar">
-        <div class="game-title">
-          <h2>The 2022 Catalina Wine Mixer</h2>
-        </div>
-        <div class="hud-bar-section">
-          <div class="player-score">
-            <h2>Player Score: <span id='playerScore'>0</span></h2>
-          </div>
-          <div class="count-down-timer">
-            <h2>Time Left: <span id="countDownTimer">Get Ready!</span></h2>
-          </div>
-          <div class="game-buttons">
-            <button id="restartBtn">Restart Game</button>
+          <div class="character-container">
+            <img
+              src="/assets/images/brennan-profile-image.png"
+              alt="Brennan character"
+            />
+            <button class="btn startBtnBrennan">Play as Brennan</button>
           </div>
         </div>
-      </div>
-      <div class="grid-wrapper">
-        <div class="grid">
+      </section>
+      <!-- GAME SCREEN -->
+      <section class="display-game-section hide">
+        <div class="game-header-bar">
+          <h2 class="game-title">Catalina Wine Mixer</h2>
+          <div class="hud-bar-section">
+            <div>Score: <span id="playerScore">0</span></div>
+            <div>Time: <span id="countDownTimer">25</span>s</div>
+            <button class="btn" id="restartBtn">Restart Game</button>
+          </div>
         </div>
-      </div>
-    </section>
-    <!-- MINI GAMES -->
-    <section class="mini-game-section hide">
-      <div class="mini-game-grid-wrapper">
+        <div class="grid-wrapper">
+          <div class="grid"></div>
+        </div>
+        <!-- Mobile Controls -->
+        <div class="mobileNavigation hide">
+          <button class="mobileBtn" id="upBtn">↑</button>
+          <button class="mobileBtn" id="leftBtn">←</button>
+          <button class="mobileBtn" id="rightBtn">→</button>
+          <button class="mobileBtn" id="downBtn">↓</button>
+        </div>
+      </section>
+      <!-- MINI GAMES -->
+      <section class="mini-game-section hide">
         <div class="mini-game-display">
-          <h2>MINI GAME: Derek needs his numbers!</h2>
-          <h2>Solve all the below questions to continue!</h2>
-          <p class="mini-game-explanation">Derek needs to know how the day is going and is asking Brennan to give him some random calculations immediately or Randy will eat his ass!!!</p>
-          <div class="questionBox">
-            <p>What is 
-              <span id="numOne">536</span> 
-              /
-              <span id="numTwo">268</span> 
-              = 
-              <input id="questionOneAnswer" type='number' placeholder="Type Answer Here">
-              <input type="submit" id="submitBtn">
-              <span id="correctOne" class="hide">Correct</span>
-              <span id="incorrectOne" class="hide">Wrong!</span>
-            </p>
-          </div>        
+          <h2>Mini Challenge Time!</h2>
+          <div class="mini-game-explanation">
+            <p>How many brothers are in the movie Stepbrothers?</p>
+            <input type="number" id="questionOneAnswer" min="0" max="10" />
+            <button class="btn" id="submitBtn">Submit Answer</button>
+          </div>
+          <p id="correctOne" class="hide">Correct! +10 points!</p>
+          <p id="incorrectOne" class="hide">Wrong! Try again!</p>
+        </div>
+      </section>
+      <!-- Win Screen -->
+      <div id="winScreen" class="win-screen hide">
+        <h2>YOU WON!</h2>
+        <h3>THE CATALINA WINE MIXER WAS SUCCESSFUL!</h3>
+        <div class="win-buttons">
+          <button class="btn" onclick="window.location.reload()">
+            Play Again
+          </button>
+          <button class="btn" onclick="window.location.reload()">
+            Play as Other Character
+          </button>
         </div>
       </div>
-    </section>
-    <!-- MOBILE GAME CONTROLS -->
-    <section class="mobileNavigation hide">
-      <div>
-        <div>
-          <button class="mobileBtn" id="upBtn">UP</button>
-        </div>
-        <div>
-          <button class="mobileBtn" id="leftBtn">LEFT</button>
-          <button class="mobileBtn" id="rightBtn">RIGHT</button>
-        </div>
-        <div>
-          <button class="mobileBtn" id="downBtn">DOWN</button>
-        </div>
-      </div>
-    </section>
-  </main>
-  <div class="lose-screen-section hide">
-    <div>
-      <h2>OH NO!! You Lost</h2>
-      <h2>The Catalina Wine Mixer is a failure!</h2>
-    </div>
-    <div>
-      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1iypuBzWzQc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="game-buttons">
-      <button class="newGameBtn" onclick="launchNewGame()">Try Again</button>
-    </div>
-  </div>
-  <div class="win-screen-section hide">
-    <div>
-      <h2>CONGRATULATIONS!! YOU WON!</h2>
-      <h2>It's The Catalina Fucking Wine Mixer!</h2>
-    </div>
-    <div>
-      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RGB8QgwxZqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="game-buttons">
-      <button class="newGameBtn" onclick="launchNewGame()">Try Again</button>
-    </div>
-  </div>
-  <audio id="audio" class="hide" controls style="display:none">
-    <source src="/assets/soundeffects/champagnecork.mp3" type="audio/mpeg"> Your browser does not support the audio element.
-  </audio>
-  <script src="/scripts/game-logic.js"></script>
-</body>
+      <!-- Lose Screen -->
+      <section class="lose-screen-section hide">
+        <h2>Game Over!</h2>
+        <p>You ran out of time! The Catalina Wine Mixer was a failure.</p>
+        <button class="btn newGameBtn" onclick="launchNewGame()">
+          Try Again
+        </button>
+      </section>
+    </main>
+    <audio id="audio" class="hide" controls style="display: none">
+      <source src="/assets/soundeffects/champagnecork.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <script src="/scripts/game-logic.js"></script>
+  </body>
 </html>
